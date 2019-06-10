@@ -6,8 +6,8 @@ const omit = (obj, keys) => {
 
   return Object.assign(
     {},
-    ...Object.entries(obj)
-      .filter(([key]) => !keySet.has(key))
+    ...Object.keys(obj)
+      .filter(key => !keySet.has(key))
       .map(key => ({ [key]: obj[key] }))
   );
 };
